@@ -1,0 +1,88 @@
+body {
+  /* font-size: 2rem; */
+  line-height: 1.5;
+  background-color: blanchedalmond;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px gray;
+  padding: 1rem;
+}
+
+.card img {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 12px 12px 27px #474444, -12px -12px 27px #ffffff;
+}
+
+.card h2 {
+  color: black;
+  padding: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card button {
+  background: #e0e0e0;
+  color: #d60087;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff;
+}
+
+.modal-outer {
+  display: grid;
+  background: hsla(200, 10%, 80%, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  /* Hide modal */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.modal-outer img {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 20px 20px 40px #474444, -20px -20px 40px #ffffff;
+}
+
+.modal-outer.open {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.modal-inner {
+  background: #e0e0e0;
+  max-width: 600px;
+  min-width: 400px;
+  min-height: 200px;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 10px 10px 30px black;
+  transform: translateY(-100%);
+  transition: transform 1.2s;
+}
+
+.modal-outer.open .modal-inner {
+  transform: translateY(0);
+}

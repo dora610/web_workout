@@ -1,0 +1,64 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+nav {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 0px 10px;
+  box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+  text-decoration: none;
+  color: #0d0d0d;
+}
+
+nav button {
+  display: none;
+  justify-self: center;
+  margin: 15px 0px;
+}
+
+nav > a.show {
+  display: block;
+  text-align: center;
+}
+
+nav.bg-change {
+  backdrop-filter: blur(40px);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 480px) {
+  .brand-name ~ a {
+    display: none;
+  }
+
+  nav button {
+    display: inline;
+  }
+
+  nav.collapse {
+    grid-auto-flow: row;
+  }
+}
